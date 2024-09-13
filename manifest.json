@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Resume YouTube Video After Computer Awakens",
+    "description": "This extension allows paused YouTube videos in Chrome browsers (that have this extension installed and enabled) to be automatically resumed when the user's computer awakens.",
+    "version": "1.0",
+    "action": {
+      "default_popup": "default-popup.html"
+    },
+    "content_scripts": [
+      {
+        "js": ["content-scripts/youtube-content-script.js"],
+        "matches": [
+          "https://www.youtube.com/*"
+        ]
+      }
+    ],
+    "permissions": [
+      "tabs",
+      "idle"
+    ],
+    "background": {
+      "service_worker": "service-worker.js"
+    }
+  }
